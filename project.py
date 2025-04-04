@@ -68,4 +68,5 @@ def listar_livros():
     return jsonify(livros_formatados)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))  # Render fornece essa variável automaticamente
+    app.run(host='0.0.0.0', port=port)
